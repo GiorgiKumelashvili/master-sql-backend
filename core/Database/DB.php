@@ -1,10 +1,14 @@
 <?php
 
-
 namespace app\core\Database;
 
-class DB extends Core {
-    public function show() {
-        print_r(Core::connection());
+final class DB extends Core {
+    public static function InitializeConnection() {
+        // Initialize Singleton and connect to database
+        Core::Initialize();
+    }
+
+    public static function GetData() {
+
     }
 }

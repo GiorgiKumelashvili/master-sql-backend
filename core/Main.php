@@ -3,6 +3,7 @@
 
 namespace app\core;
 
+use app\core\Database\DB;
 use app\core\Helpers\Bootup;
 use app\core\Helpers\FileManager;
 use app\core\Http\Http;
@@ -16,13 +17,16 @@ class Main {
         Bootup::LOAD_ENV();
         Bootup::SET_ERRORS();
 
-        // Initialize app for routes
-        $app = new Http();
+        // Initialize Database first after bootup
+        DB::InitializeConnection();
 
-        // require routes
+        // Initialize Http for routes
+        Http::Initialize();
+
+        // require Routes
         require_once FileManager::fullpath("api/routes.php");
 
-        // validate routes
+        // validate Routes
         Route::validateUnkownUrl();
     }
 }
