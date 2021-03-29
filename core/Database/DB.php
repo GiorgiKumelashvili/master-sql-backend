@@ -8,7 +8,8 @@ final class DB extends Core {
         Core::Initialize();
     }
 
-    public static function GetData() {
-
+    public static function RawQueryExecute(string $rawquery):void {
+        $connecton = parent::connection();
+        $connecton->exec($rawquery);
     }
 }
