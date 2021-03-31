@@ -7,10 +7,16 @@
  * |============================================
  */
 
+use app\api\controllers\DefaultTableController;
+use app\api\controllers\TableController;
 use app\core\Routing\Route;
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
-Route::get('/test', [\app\api\controllers\TableController::class, 'test']);
-Route::post('/', [\app\api\controllers\TableController::class, 'index']);
+Route::post('/', [TableController::class, 'index']);
+
+Route::post('/database/tabledata', [TableController::class, 'tableData']);
+
+// [ADMIN]
+Route::get('/database/reset', [DefaultTableController::class, 'reset']);
