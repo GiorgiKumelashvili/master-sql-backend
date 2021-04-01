@@ -140,11 +140,11 @@ class TableController {
                 "1000021001" => "SELECT m.id, t.id as ticket_id, m.name FROM tickets t,movies m WHERE t.movie_id = m.id ORDER BY t.movie_id;",
             ],
 
-//            "1000022" => [
-//                "1000022001" => "SELECT genre FROM {$mainDB} UNION SELECT genre FROM Suppliers ORDER BY genre;",
-//                "1000022002" => "SELECT genre FROM {$mainDB} UNION ALL SELECT genre FROM Suppliers ORDER BY genre;",
-//                "1000022003" => "SELECT genre, age_restriction FROM {$mainDB} WHERE age_restriction='Germany' UNION SELECT genre, age_restriction FROM Suppliers WHERE age_restriction='Germany' ORDER BY genre;",
-//            ],
+			//    "1000022" => [
+			//        "1000022001" => "SELECT genre FROM {$mainDB} UNION SELECT genre FROM Suppliers ORDER BY genre;",
+			//        "1000022002" => "SELECT genre FROM {$mainDB} UNION ALL SELECT genre FROM Suppliers ORDER BY genre;",
+			//        "1000022003" => "SELECT genre, age_restriction FROM {$mainDB} WHERE age_restriction='Germany' UNION SELECT genre, age_restriction FROM Suppliers WHERE age_restriction='Germany' ORDER BY genre;",
+			//    ],
             "1000023" => [
                 "1000023001" => "SELECT COUNT(review), age_restriction FROM movies GROUP BY age_restriction;",
                 "1000023002" => "SELECT COUNT(review) as review_count, age_restriction FROM movies GROUP BY age_restriction ORDER BY review_count  DESC;",
@@ -175,4 +175,8 @@ class TableController {
 
         return $data[$exampleId][$queryId];
     }
+
+	public function test(){
+		echo "hello";
+	}
 }
