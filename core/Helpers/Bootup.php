@@ -6,8 +6,13 @@ use Dotenv\Dotenv;
 class Bootup {
     public static function LOAD_ENV(): void {
         $rootPath = FileManager::root();
-        $dotenv = Dotenv::createImmutable($rootPath);
-        $dotenv->load();
+        // $dotenv = Dotenv::createImmutable($rootPath);
+        // $dotenv->load();
+
+		$dotenv = new Dotenv\Dotenv();
+		if(getenv('APP_ENV') === 'development') {
+			$dotenv->load($rootPath);
+		}
     }
 
 
