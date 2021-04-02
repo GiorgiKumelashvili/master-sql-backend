@@ -7,6 +7,7 @@ namespace app\api\controllers;
 
 
 use app\core\Database\DB;
+use app\core\Helpers\Helper;
 use app\core\Http\Http;
 
 class TableController {
@@ -177,6 +178,12 @@ class TableController {
     }
 
 	public function test(){
-		echo "hello";
+		echo "hello" . PHP_EOL;
+		echo Helper::env('DB_HOST') . PHP_EOL;
+        echo Helper::env('DB_HOST') . PHP_EOL;
+        echo Helper::env('DB_DATABASE') . PHP_EOL;
+        echo Helper::env('DB_PORT') . PHP_EOL;
+        echo Helper::env('DB_USERNAME') . PHP_EOL;
+        echo Helper::env('DB_PASSWORD') . PHP_EOL;
 	}
 }

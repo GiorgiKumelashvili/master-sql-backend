@@ -18,7 +18,7 @@ class Main {
         Bootup::SET_ERRORS();
 
         // Initialize Database first after bootup
-        // DB::InitializeConnection();
+//         DB::InitializeConnection();
 
         // Initialize Http for routes
         Http::Initialize();
