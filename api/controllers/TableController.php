@@ -181,34 +181,5 @@ class TableController {
 
 	public function test(){
 		echo "hello" . "<br>";
-        echo "DB_HOST" . Helper::env('DB_HOST') . "<br>";
-        echo "DB_DATABASE" . Helper::env('DB_DATABASE') . "<br>";
-		echo "DB_HOST" . Helper::env('DB_HOST') . "<br>";
-        echo "DB_PORT" . Helper::env('DB_PORT') . "<br>";
-        echo "DB_USERNAME" . Helper::env('DB_USERNAME') . "<br>";
-        echo "DB_PASSWORD" . Helper::env('DB_PASSWORD') . "<br>";
-
-        echo "<br><hr>";
-
-        try {
-            $dbhost = Helper::env('DB_HOST');
-            $dbname = Helper::env('DB_DATABASE');
-            $dbport = Helper::env('DB_PORT');
-            $dbusername = Helper::env('DB_USERNAME');
-            $dbpassword = Helper::env('DB_PASSWORD');
-
-            $DSN = "mysql:host={$dbhost};port={$dbport};dbname={$dbname}";
-
-            // Connect
-            $db = new PDO($DSN, $dbusername, $dbpassword, [
-                PDO::ATTR_ERRMODE => true,
-                PDO::ERRMODE_EXCEPTION => true
-            ]);
-
-            print_r($db);
-        }
-        catch (PDOException $e) {
-            die("Connection failed: {$e->getMessage()}");
-        }
 	}
 }
