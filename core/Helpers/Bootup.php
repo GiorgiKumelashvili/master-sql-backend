@@ -9,7 +9,7 @@ class Bootup {
 
         $dotenv = Dotenv::createImmutable($rootPath);
 		if(getenv('APP_ENV') === 'development') {
-			$dotenv->load($rootPath);
+			$dotenv->load();
 		}
     }
 

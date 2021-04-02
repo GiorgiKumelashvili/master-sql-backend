@@ -20,4 +20,5 @@ Route::post('/database/tabledata', [TableController::class, 'tableData']);
 
 // [ADMIN]
 Route::get('/', [TableController::class, 'test']);
+Route::get('/database/tabledata', [TableController::class, 'tableData']);
 Route::get('/database/reset', [DefaultTableController::class, 'reset']);
